@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Create lab reports</h1>
+
+<div id="create_lab_reports">
+  <% @create_lab_reports.each do |create_lab_report| %>
+    <%= render create_lab_report %>
+    <p>
+      <%= link_to "Show this create lab report", create_lab_report %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New create lab report", new_create_lab_report_path %>

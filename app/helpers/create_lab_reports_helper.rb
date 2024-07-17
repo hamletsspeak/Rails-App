@@ -1,0 +1,2 @@
+module CreateLabReportsHelper
+end
