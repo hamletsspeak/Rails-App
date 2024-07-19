@@ -97,3 +97,9 @@ html, body {
     color: red; /* Set color to white */
 }
 
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}

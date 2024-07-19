@@ -58,13 +58,13 @@ class LabReportsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_lab_report
-      @lab_report = LabReport.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_lab_report
+    @lab_report = LabReport.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def lab_report_params
-      params.require(:lab_report).permit(:user_id, :title, :description, :grade)
-    end
+  # Only allow a list of trusted parameters through.
+  def lab_report_params
+    params.require(:lab_report).permit(:user_id, :title, :description, :grade)
+  end
 end

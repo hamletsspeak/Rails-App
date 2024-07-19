@@ -1,5 +1,10 @@
-<div class="container mt-5">
+<% content_for :title, "New User" %>
+
+<div class="form-container">
   <h1>New User</h1>
-  <%= render 'form', user: @user %>
-  <%= link_to 'Back', users_path, class: 'btn btn-secondary' %>
+  <%= render "form", user: @user %>
+<br>
+  <div class="back-link">
+    <%= link_to "Back to Users", users_path, class: "btn-back" %>
+  </div>
 </div>

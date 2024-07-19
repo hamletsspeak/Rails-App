@@ -1,19 +1,18 @@
-<%= form_with(model: lab_report) do |form| %>
+<%= form_with(model: lab_report, local: true) do |form| %>
   <% if lab_report.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(lab_report.errors.count, "error") %> prohibited this lab_report from being saved:</h2>
-
+      <h2><%= pluralize(lab_report.errors.count, "error") %> prohibited this lab report from being saved:</h2>
       <ul>
-        <% lab_report.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+        <% lab_report.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
         <% end %>
       </ul>
     </div>
   <% end %>
 
   <div>
-    <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%= form.label :user_id, "User", style: "display: block" %>
+    <%= form.collection_select :user_id, User.all, :id, :email, prompt: "Select a user", class: "form-control" %>
   </div>
 
   <div>
@@ -28,7 +27,7 @@
 
   <div>
     <%= form.label :grade, style: "display: block" %>
-    <%= form.text_field :grade %>
+    <%= form.select :grade, options_for_select(2..5), include_blank: 'Select grade', class: "form-control" %>
   </div>
 
   <div>
