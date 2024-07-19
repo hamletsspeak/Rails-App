@@ -1,0 +1,50 @@
+/* app/assets/stylesheets/tables.css */
+
+/* Центрирование таблицы */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: separate; /* Изменено на separate для закругления углов */
+    border-spacing: 0;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px; /* Закругленные углы для всей таблицы */
+    overflow: hidden;
+}
+
+/* Стили для таблицы */
+th, td {
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Нежные цвета для заголовков */
+th {
+    background-color: #f8f9fa; /* Светло-серый фон */
+    color: #495057; /* Темно-серый текст */
+    font-weight: bold;
+    border-top: none;
+}
+
+/* Нежные цвета для ячеек */
+td {
+    background-color: #ffffff; /* Белый фон */
+    color: #495057; /* Темно-серый текст */
+}
+
+/* Закругленные углы для заголовков и ячеек */
+th:first-child {
+    border-top-left-radius: 10px;
+}
+
+th:last-child {
+    border-top-right-radius: 10px;
+}
+
+td:first-child {
+    border-bottom-left-radius: 10px;
+}
+
+td:last-child {
+    border-bottom-right-radius: 10px;
+}

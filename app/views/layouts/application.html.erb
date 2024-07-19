@@ -1,16 +1,47 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Gamrail</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Hamlo25</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
-  </head>
+  <%= stylesheet_link_tag "https://fonts.googleapis.com/css2?family=Ga+Maamli&display=swap", rel: "stylesheet" %>
+  <%= stylesheet_link_tag "https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap", rel: "stylesheet" %>
+  <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "tables", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "headers", "data-turbo-track": "reload" %>
+  <%= stylesheet_link_tag "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css", rel: "stylesheet" %>
+  <%= javascript_importmap_tags %>
+</head>
 
-  <body>
-    <%= yield %>
-  </body>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/">Hamlo25</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <%= link_to 'Главная', root_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Отчёты', lab_reports_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= link_to 'Студенты', users_path, class: 'nav-link' %>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <%= yield %>
+</div>
+
+<%= javascript_include_tag "https://code.jquery.com/jquery-3.5.1.slim.min.js", integrity: "sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj", crossorigin: "anonymous" %>
+<%= javascript_include_tag "https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js", integrity: "sha384-pzjw8f+ua7Kw1TIq4gFg6KN8fhD+GLjoWgAAEAXSX+Zgp0t8p2zoBzoZ4Un19Axw", crossorigin: "anonymous" %>
+<%= javascript_include_tag "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js", integrity: "sha384-B4gt1jrGC7Jh4AgEPFL8owj6rbO7dvgQzIpFf4xYcDg/S4HfuzI5K7zJ26iwOGxu", crossorigin: "anonymous" %>
+</body>
 </html>
