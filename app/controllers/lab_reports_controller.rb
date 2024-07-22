@@ -1,4 +1,5 @@
 class LabReportsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_lab_report, only: %i[ show edit update destroy ]
 
   # GET /lab_reports or /lab_reports.json

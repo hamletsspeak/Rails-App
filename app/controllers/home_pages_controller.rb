@@ -1,4 +1,5 @@
 class HomePagesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_home_page, only: %i[ show edit update destroy ]
 
   # GET /home_pages or /home_pages.json
