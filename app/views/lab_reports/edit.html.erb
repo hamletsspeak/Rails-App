@@ -4,7 +4,9 @@
 
 <br>
 
-<div>
-  <%= link_to "Show this lab report", @lab_report %> |
-  <%= link_to "Back to lab reports", lab_reports_path %>
+<div class="lab-report-actions">
+  <div>
+    <%= link_to "Show this lab report", (@lab_report), class: "btn btn-primary" %> |
+    <%= link_to "Back to lab reports", lab_reports_path, class: "btn btn-secondary" %>
+  </div>
 </div>

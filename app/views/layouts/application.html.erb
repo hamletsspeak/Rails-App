@@ -16,49 +16,56 @@
 </head>
 
 <body>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="/">Hamlo25</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sideMenu" aria-controls="sideMenu" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
+
+  <div class="collapse navbar-collapse" id="sideMenu">
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <%= link_to 'Главная', root_path, class: 'nav-link' %>
+        <%= link_to 'Home', root_path, class: 'nav-link' %>
       </li>
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%= link_to 'Отчёты', lab_reports_path, class: 'nav-link' %>
+          <%= link_to 'Reports', lab_reports_path, class: 'nav-link' %>
         </li>
         <li class="nav-item">
-          <%= link_to 'Студенты', users_path, class: 'nav-link' %>
+          <%= link_to 'Students', users_path, class: 'nav-link' %>
         </li>
         <li class="nav-item">
           <%= link_to 'Edit profile', edit_user_registration_path, class: 'nav-link' %>
         </li>
         <li class="nav-item">
-          <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+          <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'cancel-button' %>
         </li>
       <% else %>
         <li class="nav-item">
-          <%= link_to 'Sign up', new_user_registration_path, class: 'nav-link' %>
+          <%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-outline-primary nav-link' %>
         </li>
         <li class="nav-item">
-          <%= link_to 'Login', new_user_session_path, class: 'nav-link' %>
+          <%= link_to 'Login', new_user_session_path, class: 'btn btn-outline-primary nav-link' %>
         </li>
       <% end %>
     </ul>
   </div>
 </nav>
-
 <div class="container mt-5">
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
   <%= yield %>
 </div>
 
 <%= javascript_include_tag "https://code.jquery.com/jquery-3.5.1.slim.min.js", integrity: "sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj", crossorigin: "anonymous" %>
 <%= javascript_include_tag "https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js", integrity: "sha384-pzjw8f+ua7Kw1TIq4gFg6KN8fhD+GLjoWgAAEAXSX+Zgp0t8p2zoBzoZ4Un19Axw", crossorigin: "anonymous" %>
 <%= javascript_include_tag "https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js", integrity: "sha384-B4gt1jrGC7Jh4AgEPFL8owj6rbO7dvgQzIpFf4xYcDg/S4HfuzI5K7zJ26iwOGxu", crossorigin: "anonymous" %>
+<script>
+    $(document).ready(function() {
+        $('#menuToggle').click(function() {
+            $('#sideMenu').toggleClass('show');
+        });
+    });
+</script>
+
 </body>
 </html>

@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require devise
  */
 
 
@@ -70,6 +71,7 @@ html, body {
     font-size: 6em; /* Increased font size */
     margin: 0;
     color: white; /* Set color to white */
+    font-family: 'Ga Maamli', sans-serif;
 }
 
 .content p {
@@ -103,3 +105,176 @@ html, body {
     border-radius: 5px;
     border: 1px solid #ccc;
 }
+
+.users .content h1 {
+    font-family: 'Ga Maamli', sans-serif;
+    text-align: center;
+    font-size: 6em; /* Increased font size */
+    margin: 0;
+    color: white; /* Set color to white */
+}
+
+
+.cancel-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #dc3545; /* Красный цвет для кнопки отмены */
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cancel-button:hover {
+    background-color: #c82333; /* Темно-красный цвет при наведении */
+    transform: scale(1.02); /* Небольшое увеличение при наведении */
+}
+
+.cancel-button:active {
+    background-color: #bd2130; /* Цвет при нажатии */
+    transform: scale(1); /* Возврат к исходному размеру при нажатии */
+}
+
+.pressed-button {
+    text-decoration: none;
+    display: inline-block;
+    padding: 12px 40px;
+    margin: 10px 20px;
+    border-radius: 30px;
+    background-image: linear-gradient(45deg, #6ab1d7 0%, #33d9de 50%, #002878 100%);
+    background-position: 100% 0;
+    background-size: 100% 200%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    color: white;
+    box-shadow: 0 16px 32px 0 rgba(0, 40, 120, .35);
+    transition: .5s;
+}
+.pressed-button:hover {
+    box-shadow: 0 0 0 0 rgba(0, 40, 120, 0);
+    background-position: 0 0;
+}
+
+.navbar {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    font-size: 20px;
+    padding: 0 15px;
+    color: #000000;
+    text-align: center;
+    font-family: 'Ga Maamli', sans-serif;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #000;
+    background-color: #f8f9fa;
+}
+
+.navbar-nav .btn {
+    margin: 5px;
+    font-size: 0.875rem;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-outline-danger {
+    color: #dc3545;
+    border-color: #dc3545;
+    padding: 5px 10px;
+    font-size: 0.875rem;
+}
+
+.btn-outline-danger:hover {
+    color: #fff;
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+
+.btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+    padding: 5px 10px;
+    font-size: 0.875rem;
+}
+
+.btn-outline-primary:hover {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.logout-btn {
+    padding: 5px 10px;
+    font-size: 0.875rem;
+}
+
+/* Styles for the sliding menu */
+.menu {
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    background: #f8f9fa;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    transition: right 0.3s ease;
+    z-index: 1050;
+}
+
+.menu.show {
+    right: 0;
+}
+
+.menu .nav-link {
+    padding: 10px 20px;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1040;
+    display: none;
+}
+
+.overlay.show {
+    display: block;
+}
+
+.link-button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #3283d0; /* Красный цвет для кнопки отмены */
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+

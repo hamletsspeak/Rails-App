@@ -1,21 +1,19 @@
-/* app/assets/stylesheets/tables.css */
-
 /* Центрирование таблицы */
 table {
-    width: 80%;
+    width: 100%;
     margin: 20px auto;
-    border-collapse: separate; /* Изменено на separate для закругления углов */
+    border-collapse: collapse; /* Изменено на collapse для удаления зазоров */
     border-spacing: 0;
     border: 1px solid #e0e0e0;
-    border-radius: 10px; /* Закругленные углы для всей таблицы */
-    overflow: hidden;
+    border-radius: 0; /* Убираем закругленные углы */
 }
 
 /* Стили для таблицы */
 th, td {
     border: 1px solid #e0e0e0;
     padding: 10px;
-    text-align: left;
+    text-align: center;
+    border-radius: 0; /* Убираем закругленные углы у ячеек */
 }
 
 /* Нежные цвета для заголовков */
@@ -24,27 +22,30 @@ th {
     color: #495057; /* Темно-серый текст */
     font-weight: bold;
     border-top: none;
+    border-radius: 0; /* Убираем закругленные углы у заголовков */
 }
 
 /* Нежные цвета для ячеек */
 td {
     background-color: #ffffff; /* Белый фон */
     color: #495057; /* Темно-серый текст */
+    border-radius: 0; /* Убираем закругленные углы у ячеек */
 }
 
-/* Закругленные углы для заголовков и ячеек */
-th:first-child {
-    border-top-left-radius: 10px;
+.button-cell {
+    display: flex;
+    flex-wrap: wrap; /* Позволяет кнопкам переходить на следующую строку при нехватке места */
 }
 
-th:last-child {
-    border-top-right-radius: 10px;
+.flex-btn {
+    flex: 1 1 auto; /* Позволяет кнопкам растягиваться и занимать доступное пространство */
+    margin: 0 2px; /* Добавляет небольшие отступы между кнопками */
 }
 
-td:first-child {
-    border-bottom-left-radius: 10px;
+.d-flex {
+    display: flex;
 }
 
-td:last-child {
-    border-bottom-right-radius: 10px;
+.flex-fill {
+    flex: 1;
 }

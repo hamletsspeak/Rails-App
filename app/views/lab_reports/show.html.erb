@@ -1,10 +1,65 @@
-<p style="color: green"><%= notice %></p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lab Report</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+      body {
+          padding: 20px;
+      }
 
-<%= render @lab_report %>
+      .notice {
+          color: green;
+          font-weight: bold;
+          margin-bottom: 20px;
+      }
 
-<div>
-  <%= link_to "Edit this lab report", edit_lab_report_path(@lab_report) %> |
-  <%= link_to "Back to lab reports", lab_reports_path %>
+      .lab-report-container {
+          border: 1px solid #ccc;
+          border-radius: 10px;
+          padding: 20px;
+          background-color: #f9f9f9;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          margin-bottom: 20px;
+      }
 
-  <%= button_to "Destroy this lab report", @lab_report, method: :delete %>
+      .lab-report-actions {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+      }
+
+      .lab-report-actions a, .lab-report-actions button {
+          margin-right: 10px;
+      }
+  </style>
+</head>
+<body>
+<div class="container">
+  <% if notice %>
+    <p class="notice"><%= notice %></p>
+  <% end %>
+
+  <div class="lab-report-container">
+    <%= render @lab_report %>
+  </div>
+
+  <div class="lab-report-actions">
+    <div>
+      <%= link_to "Edit this lab report", edit_lab_report_path(@lab_report), class: "btn btn-primary" %>
+      <%= link_to "Back to lab reports", lab_reports_path, class: "btn btn-secondary" %>
+    </div>
+    <div>
+      <%= button_to "Destroy this lab report", @lab_report, method: :delete, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %>
+    </div>
+  </div>
 </div>
+
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
